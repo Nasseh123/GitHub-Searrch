@@ -1,10 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4 ">
-            <div class="search-class">
+        <div class="col-md-12 ">
+            <div>
                 <p class="btn btn-warning" (click)="userView = true">Users</p>
-                <p  class="btn btn-danger" (click)="!userView = false">Repos</p>
+                <p class="btn btn-danger" (click)="!userView = false">Repos</p>
             </div>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="username" name="username"
+                        placeholder="Enter Username" (keyup)="getuserDetails()">
+                </div>
+            </form>
             <div class="card" style="width: 18rem;" *ngIf="userView">
                 <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
                 <div class="card-body">
@@ -18,26 +24,46 @@
                     <p class="btn btn-warning">Following<br><span>{{user.following}}</span></p>
                     <p class="btn btn-info">Repositories<br><span>{{user.public_repos}}</span></p>
 
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    
                 </ul>
                 <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;" *ngIf="!userView">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div style="width: 18rem;" *ngIf="!userView">
     
-                <div class="card-body">
-                    <h5 class="card-title">{{repo.name}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                <div class="col-md-">
+                    <div class="card " *ngFor="let repoo of repo">
+                        <div class="card-body">
+                            <h5 class="card-title">{{repo.name}}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of
+                                the
+                                card's content.</p>
+                        </div>
+    
+                        <div class="card-body">
+                            <a href="{{repoo.html_url}}" class="card-link">repoLink</a>
+                            <h4>{{repoo.name}}</h4>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+    
+    
                 </div>
-                
-                <div class="card-body">
-                    <a href="{{repo.html_url}}" class="card-link">repoLink</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
+    
+    
+    
             </div>
         </div>
     </div>
 </div>
+    
