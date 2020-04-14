@@ -13,7 +13,10 @@
     <div class="row" *ngIf='userView'>
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+                <div class="card">
+                    <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+                </div>
+                
                 <div class="card-body">
                     <h5 class="card-title">{{user.login}}</h5>
                     <p class="card-text"></p>

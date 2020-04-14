@@ -2,16 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.3.9.
 
-This is a quotes application that is supposed to allow a user to input quotes, upvote, downvote or delete them.
+This is a Githubfetch users application that is supposed to allow a user to input an username and get list of repo if the user and links to their github profile.
 
 #### Author
 
- ****Manasseh BUndi****&trade; (01/04/2020)
+ ****Manasseh Bundi****&trade; (14/04/2020)
 
 ## Description
 
-It enables a user to input quotes, upvote, downvote or delete quotes from their dashboard.
- It has a form component where the user enters the quote, name of author and their name which is then displayed on the quote display component. They click the upvote button to upvote, downvote button to downvote.The quote with the highest upvote is displayed as 'Quote of the day'. One can also see how long the quote has been on the site.  
+
+It enables a user to input username, view profile and either continue on github itself
 
 
 ## Development server
@@ -24,7 +24,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Project live site
 
-  This is the live .[ Live site]()
+  This is the live link to the app"https://nasseh123.github.io/GitHub-Searrch/" .[ Live site]()
 
 ## Behavior Driven Development
 <table>
@@ -33,36 +33,16 @@ Run `ng generate component component-name` to generate a new component. You can 
       <th>Input</th> 
       <th>Output</th>   
     </tr>
-    <tr>
-        <td>Show quote info</td>
-        <td>Input quote and author</td>
-        <td>Adds info to the component</td>
+   <tr>
+        <td>Show user</td>
+        <td>Enter name</td>
+        <td>Show profile</td>
     </tr>
     <tr>
-        <td>Submit quote</td>
-        <td>Click submit button</td>
-        <td>Quote is added to the quote list</td>
-    </tr>
-    <tr>
-        <td>Upvote and Downvote</td>
-        <td>Clcik upvote and downvote button</td>    
-        <td>Adds or deducts quotes</td>
-    </tr>
-    <tr>
-        <td>Show time</td>
-        <td>Click the button</td>
-        <td>Show track since whe quote is submitted</td>
+        <td>Enter Git username</td>
+        <td>Enter username</td>
+        <td>Show repo</td>
     </tr> 
-    <tr>
-        <td>Show highest upvote </td>
-        <td>Adds vote on button click</td>
-        <td>Quote with the highest upvote is highlighted</td>
-    </tr>   
-    <tr>
-        <td>Delete </td>
-        <td>Click delete icon</td>
-        <td>Quote is deleted</td>
-    </tr>
 </table>
 
 
