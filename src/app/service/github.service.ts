@@ -14,7 +14,7 @@ export class GithubService {
   repo:Repos;
 
  url:string ='https://api.github.com/users'
-  apiKey: string='ab5ab9c1c0bffa685aff300678da76cd7afd0743';
+  apiKey: string='';
 
   constructor(private http:HttpClient) {
     this.user=new User ('', '', '', '', 0, 0, 0);

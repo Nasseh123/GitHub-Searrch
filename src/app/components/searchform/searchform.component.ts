@@ -13,7 +13,7 @@ user:User;
 username:string;
 repo:Repos;
 
-
+userView=true;
   constructor(private service:GithubService) { }
   getuserDetails(){
     this.service.getUser();
@@ -22,11 +22,23 @@ repo:Repos;
     this.service.getdefaultUser(this.username)
     // console.log(this.username )
   
-    this.service.getRepos(this.repo)
+    this.service.getRepos(this.username)
     this.repo=this.service.repo;
     // console.log(this.repo )
   }
+  switchView() {
+    this.userView = !this.userView;
+  }
   ngOnInit(): void {
+    this.service.getUser();
+    this.user = this.service.user;
+    // console.log(this.user)
+
+    this.service.getRepos(this.username)
+    this.repo=this.service.repo;
+    // console.log(this.repo)
+
+  }
   }
 
-}
+
