@@ -18,7 +18,7 @@ export class GithubService {
 
   constructor(private http:HttpClient) {
     this.user=new User ('', '', '', '', 0, 0, 0);
-    this.defaultUser='Lenny-makori';
+    this.defaultUser='Nasseh123';
     this.repo= new Repos('', '', '');
 
    }
