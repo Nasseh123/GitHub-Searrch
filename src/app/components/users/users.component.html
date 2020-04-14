@@ -3,11 +3,12 @@
         <ng-progress></ng-progress>
         <app-searchform> </app-searchform>
     <div class="row">
+        
         <div class="col-md-4">
-            <div>
+            <!-- <div>
                 <p class="btn btn-danger" (click)="userView = true">Users</p>
                 <p class="btn btn-danger" (click)="!userView = false">Repos</p>
-            </div>
+            </div> -->
             <div class="card" style="width: 18rem;" >
                 <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
                 <div class="card-body">
@@ -16,24 +17,31 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <p>{{user.login}}-<a href="{{user.html_url}}" target="blank">GIthub Profile Link</a></p>
-                    <button type="button" class="btn btn-primary"> Followers <span class="badge badge-light">{{user.followers}}</span>
-                        <span class="sr-only">unread messages</span>
-                      </button>
-                    
-                    <button type="button" class="btn btn-warning"> Following <span class="badge badge-light">{{user.following}}</span>
-                        <span class="sr-only">unread messages</span>
-                      </button>
-                    <button type="button" class="btn btn-info"> Repositories <span class="badge badge-light">{{user.public_repos}}</span>
-                        <span class="sr-only">unread messages</span>
-                      </button>
-
+                   
 
                 </ul>
                 
             </div>
+           
+
         </div>
-
-
+        <div class="foll">
+              <p class="badge badge-pill badge-success hei">Followers <span class=" badge-light badge-pill">{{user.followers}}</span></p> 
+                <p class="badge badge-pill badge-warning hei">Following <span class=" badge-light badge-pill">{{user.following}}</span></p> 
+                <p class="badge badge-pill badge-info hei">Repositories <span class=" badge-light badge-pill">{{user.public_repos}}</span></p>
+            <!-- <button type="button" class="btn btn-info"> Repositories <span class="badge badge-light">{{user.public_repos}}</span>
+                <span class="sr-only">unread messages</span>
+              </button>
+     -->
+     <br>
+             <p class="badge badge-pill badge-info hei pad">VIEW REPOSITORIES <span class=" badge-light badge-pill"></span></p> 
+     
+     
+        </div>
+        
+        
+        
+       
 
         <div class="container" *ngIf="!userView">
 <div class="row">
