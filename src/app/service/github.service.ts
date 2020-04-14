@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import{User} from '../user'
 import{Repos}from '../repos'
+import{environment} from '../../environments/environment'
 
 
 
@@ -13,13 +14,13 @@ export class GithubService {
   private defaultUser:string;
   repo:Repos;
 
- url:string ='https://api.github.com/users'
-  apiKey: string='';
+ url:string =environment.url;
+  apiKey:string=environment.apiKey;
 
   constructor(private http:HttpClient) {
     this.user=new User ('', '', '', '', 0, 0, 0);
     this.defaultUser='Nasseh123';
-    this.repo= new Repos('', '', '');
+    this.repo= new Repos('', '', '','');
 
    }
    getUser(){
@@ -59,6 +60,7 @@ export class GithubService {
       name: string;
       html_url: string;
       description: string;
+      languages_url:string;
     }
 
     const promise = new Promise(((resolve, reject) => {

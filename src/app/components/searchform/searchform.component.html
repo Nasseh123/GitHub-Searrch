@@ -5,13 +5,11 @@
                 <span class="input-group-text" id="addon-wrapping">@</span>
             </div>
             <input type="text" class="form-control" [(ngModel)]="username" name="name"
-            placeholder="Enter a Valid Username..."  (keyup)='getuserDetails()'>
-            <!-- #username='ngModel' required -->
-            <button [disabled]="!userscomponent.form.valid"  type="submit">Search</button>
+            placeholder="Enter a Valid Username..." #name='ngModel'  >
+             
+            <button type="submit" (keyup)='getuserDetails()'>Search</button>
             
         </div>
-        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-            <p>Username is required</p>
-          </div> -->
+        
     </div>
 </form>

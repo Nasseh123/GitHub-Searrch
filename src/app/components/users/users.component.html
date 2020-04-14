@@ -1,19 +1,29 @@
 <div class="container">
-        <ng-progress></ng-progress>
-        <app-searchform> </app-searchform>
-        <img src="" alt="">
-        <div>
-            <p class="btn btn-danger" (click)="userView = true">Users</p>
-            <p class="btn btn-danger" (click)="!userView = false">Repos</p>
+    <ng-progress></ng-progress>
+    <div class="jumbotron jumbotron-fluid tt">
+        <div class="container">
+            <h1 class="display-4">GIT USER SEARCH</h1>
+            <p class="lead l">This application enables you to be able to search for users and see there repos.</p>
         </div>
-        <div class="card" style="width: 18rem;" *ngIf='userView'>
-            <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{user.login}}</h5>
-                <p class="card-text"></p>
-            </div>
+    </div>
+
+    <app-searchform> </app-searchform>
+    <img src="" alt="">
+
+    <div class="row" *ngIf='userView'>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.login}}</h5>
+                    <p class="card-text"></p>
+                </div>
                 <p>{{user.login}}-<a href="{{user.html_url}}" target="blank">GIthub Profile Link</a></p>
+            </div>
         </div>
+
+
+
         <div class="foll">
             <p class="badge badge-pill badge-success hei">Followers <span
                     class=" badge-light badge-pill">{{user.followers}}</span></p>
@@ -26,38 +36,56 @@
               </button>
      -->
             <br>
-            <p class="badge badge-pill badge-info hei pad">VIEW REPOSITORIES <span
-                    class=" badge-light badge-pill"></span></p>
+
+
+            <button type="button" class="btn btn-danger pad" (click)="!userView = false">View Repositories
+
+            </button>
 
 
         </div>
 
+    </div>
+
+    <!-- <p class="btn btn-danger" (click)="!userView = false">Repos</p> -->
+
+    <div *ngIf="!userView">
+        <h1 style="text-align: center;">{{user.login}}'s Repositories</h1>
+        <button type="button" class="btn btn-primary pad" (click)="userView = true" style="margin-left: 40%;">Back to
+            User Profile
+        </button>
+        <div class="row">
+
+            <div class="col-md-4" *ngFor="let repoo of service.repo" style="margin-top: 20px;">
+
+                <div style="width: 18rem;">
 
 
-        <!-- <p class="btn btn-danger" (click)="!userView = false">Repos</p> -->
-
-        <div *ngIf="!userView">
-                <div  *ngFor="let repoo of service.repo">
-                    <div style="width: 18rem;">
-
-
-                        <div class="card ">
-                            <div class="card-body">
+                    <div class="card ">
+                        <div class="card-body">
+                            <div class="jumbotron">
                                 <h4>{{repoo.name}}</h4>
-                                <h5 class="card-title">{{repoo.name}}</h5>
-
                             </div>
 
+                            <a href="{{repoo.languages_url}}" target="blank">Technologies used</a>
+                            <h4></h4>
                             <div class="card-body">
-                                <a href="{{repoo.html_url}}" class="card-link">repoLink</a>
-
+                                <button type="button" class="btn btn-outline-info">
+                                    <a href="{{repoo.html_url}}" class="card-link" target="blank">Github Repo
+                                        Link</a></button>
 
                             </div>
                         </div>
+                    </div>
+
                 </div>
             </div>
 
+
         </div>
-
-
+        
+    </div>
+    <div class="card-footer text-muted" style="margin-top: 30px;">
+        
+    </div>
 </div>
