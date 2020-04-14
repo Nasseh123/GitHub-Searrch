@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{User} from '../../user'
 import{GithubService} from '../../service/github.service'
 import{Repos}from '../../repos'
+import{FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -14,19 +16,11 @@ export class UsersComponent implements OnInit {
   repo:Repos;
 
   userView=true;
+
   constructor(private service:GithubService) { }
 
-  getuserDetails(){
-    this.service.getUser();
-    this.user=this.service.user;
-    
-    this.service.getdefaultUser(this.username)
-    console.log(this.username)
   
-    this.service.getRepos(this.repo)
-    this.repo=this.service.repo;
-  }
-  switchSearch() {
+  switchView() {
     this.userView = !this.userView;
   }
 

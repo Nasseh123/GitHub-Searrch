@@ -11,14 +11,14 @@ import{Repos}from '../repos'
 export class GithubService {
   user:User;
   private defaultUser:string;
-  repo:Repos
+  repo:Repos;
 
  url:string ='https://api.github.com/users'
   apiKey: string='ab5ab9c1c0bffa685aff300678da76cd7afd0743';
 
   constructor(private http:HttpClient) {
     this.user=new User ('', '', '', '', 0, 0, 0);
-    this.defaultUser='Nasseh123';
+    this.defaultUser='Lenny-makori';
     this.repo= new Repos('', '', '');
 
    }
@@ -69,6 +69,7 @@ export class GithubService {
     }, error => {
 
       reject(error);
+      
     });
   }));
   return promise;

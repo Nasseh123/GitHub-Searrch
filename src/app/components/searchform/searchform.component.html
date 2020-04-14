@@ -1,0 +1,17 @@
+<form (ngSubmit)='getuserDetails()' #userscomponent='ngForm'>
+    <div class="form-group">
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">@</span>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="username" name="name"
+            placeholder="Enter a Valid Username..." #name='ngModel' required >
+             
+            <button [disabled]="!userscomponent.form.valid"  type="submit">Search</button>
+            
+        </div>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            <p>Username is required</p>
+          </div>
+    </div>
+</form>

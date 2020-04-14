@@ -1,17 +1,14 @@
 <div class="container">
+    <div class="container">
+        <ng-progress></ng-progress>
+        <app-searchform> </app-searchform>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4">
             <div>
                 <p class="btn btn-danger" (click)="userView = true">Users</p>
                 <p class="btn btn-danger" (click)="!userView = false">Repos</p>
             </div>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="username" name="username"
-                        placeholder="Enter Username" (keyup)="getuserDetails()">
-                </div>
-            </form>
-            <div class="card" style="width: 18rem;" *ngIf="userView">
+            <div class="card" style="width: 18rem;" >
                 <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{user.login}}</h5>
@@ -19,9 +16,16 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <p>{{user.login}}-<a href="{{user.html_url}}" target="blank">GIthub Profile Link</a></p>
-                    <p class="btn btn-danger">Followers<br><span>{{user.followers}}</span></p>
-                    <p class="btn btn-warning">Following<br><span>{{user.following}}</span></p>
-                    <p class="btn btn-info">Repositories<br><span>{{user.public_repos}}</span></p>
+                    <button type="button" class="btn btn-primary"> Followers <span class="badge badge-light">{{user.followers}}</span>
+                        <span class="sr-only">unread messages</span>
+                      </button>
+                    
+                    <button type="button" class="btn btn-warning"> Following <span class="badge badge-light">{{user.following}}</span>
+                        <span class="sr-only">unread messages</span>
+                      </button>
+                    <button type="button" class="btn btn-info"> Repositories <span class="badge badge-light">{{user.public_repos}}</span>
+                        <span class="sr-only">unread messages</span>
+                      </button>
 
 
                 </ul>
