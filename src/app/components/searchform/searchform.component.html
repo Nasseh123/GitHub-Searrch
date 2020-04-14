@@ -5,9 +5,9 @@
                 <span class="input-group-text" id="addon-wrapping">@</span>
             </div>
             <input type="text" class="form-control" [(ngModel)]="username" name="name"
-            placeholder="Enter a Valid Username..." #name='ngModel'  >
+            placeholder="Enter a Valid Username..." #name='ngModel' (keyup)='getuserDetails()' >
              
-            <button type="submit" (keyup)='getuserDetails()'>Search</button>
+            <button type="submit" >Search</button>
             
         </div>
         
